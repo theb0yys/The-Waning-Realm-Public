@@ -1,0 +1,27 @@
+<Module>
+  <Name value="Player Jump Height" />
+  <Id value="PlayerJumpHeight" />
+  <Version value="v0.1.0" />
+  <DefaultModule value="false" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <ModuleCategory value="Singleplayer" />
+  <DependedModules>
+    <DependedModule Id="TAOM.Dependencies" />
+    <DependedModule Id="Native" DependentVersion="v1.4.8" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="Player Jump Height" />
+      <DLLName value="PlayerJumpHeight.dll" />
+      <SubModuleClassType value="PlayerJumpHeight.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls />
+</Module>

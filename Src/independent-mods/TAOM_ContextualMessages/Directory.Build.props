@@ -1,0 +1,9 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)..\Directory.Build.props')" />
+
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>build\obj\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>build\obj\</MSBuildProjectExtensionsPath>
+  </PropertyGroup>
+</Project>

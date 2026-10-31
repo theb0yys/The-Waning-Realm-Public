@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="TAOM_PalantirNetwork/TAOM_PalantirNetwork.csproj" Id="de0c6985-7fbb-4e4e-b974-f3e85bad4bfa">
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>

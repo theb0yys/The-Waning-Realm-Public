@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>CustomBattleReforged</AssemblyName>
+    <Version>0.1.2</Version>
+    <RootNamespace>CustomBattleReforged</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\Win64_Shipping_Client\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <BannerlordPath Condition="'$(BannerlordPath)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordPath>
+    <GameBin>$(BannerlordPath)\bin\Win64_Shipping_Client</GameBin>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="*.cs" />
+    <Reference Include="0Harmony"><HintPath>$(BannerlordPath)\Modules\TAOM.Dependencies\bin\Win64_Shipping_Client\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.CustomBattle"><HintPath>$(BannerlordPath)\Modules\CustomBattle\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.CustomBattle.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade"><HintPath>$(GameBin)\TaleWorlds.MountAndBlade.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core"><HintPath>$(GameBin)\TaleWorlds.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection"><HintPath>$(GameBin)\TaleWorlds.Core.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Library"><HintPath>$(GameBin)\TaleWorlds.Library.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.ObjectSystem"><HintPath>$(GameBin)\TaleWorlds.ObjectSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Localization"><HintPath>$(GameBin)\TaleWorlds.Localization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.ModuleManager"><HintPath>$(GameBin)\TaleWorlds.ModuleManager.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.GauntletUI"><HintPath>$(GameBin)\TaleWorlds.GauntletUI.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

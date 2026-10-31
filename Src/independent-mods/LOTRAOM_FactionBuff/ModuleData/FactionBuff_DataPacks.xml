@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FactionBuffDataPacks>
+  <!--
+    Clone or override culture profiles here without rebuilding the DLL.
+    Example:
+    <Culture id="erebor" cloneFrom="erebor" foodItem="cram" />
+    <Culture id="new_culture" cloneFrom="gondor" alignment="Good" foodItem="grain" foodBonus="6" peakSeason="Autumn" />
+  -->
+</FactionBuffDataPacks>

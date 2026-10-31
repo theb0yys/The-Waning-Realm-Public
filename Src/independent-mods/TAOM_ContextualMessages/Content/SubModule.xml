@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <Name value="TAOM Contextual Messages"/>
+  <Id value="Vanilla_ContextualMessages"/>
+  <Version value="v1.4.15"/>
+  <Official value="false"/>
+  <DefaultModule value="false"/>
+  <SingleplayerModule value="true"/>
+  <MultiplayerModule value="false"/>
+  <IsHidden value="false"/>
+  <DependedModules>
+    <DependedModule Id="Native" DependentVersion="v1.4.15" Optional="false"/>
+    <DependedModule Id="SandBoxCore" DependentVersion="v1.4.15" Optional="false"/>
+    <DependedModule Id="Sandbox" DependentVersion="v1.4.15" Optional="false"/>
+    <DependedModule Id="StoryMode" DependentVersion="v1.4.15" Optional="true"/>
+    <DependedModule Id="CustomBattle" DependentVersion="v1.4.15" Optional="true"/>
+    <DependedModule Id="TAOM" Optional="false"/>
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="TAOM_ContextualMessages"/>
+      <DLLName value="Vanilla_ContextualMessages.dll"/>
+      <SubModuleClassType value="ContextualMessages.SubModule"/>
+      <Tags>
+        <Tag key="DedicatedServerType" value="none"/>
+        <Tag key="IsNoRenderModeElement" value="false"/>
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <SupportedVersions>
+    <Version value="v1.4.15"/>
+  </SupportedVersions>
+  <Xmls/>
+</Module>

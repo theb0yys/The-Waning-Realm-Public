@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin/Win64_Shipping_Client/</OutputPath>
+    <GameRoot Condition="'$(GameRoot)' == ''">A:/SteamLibrary/steamapps/common/Mount &amp; Blade II Bannerlord</GameRoot>
+    <GameBin>$(GameRoot)/bin/Win64_Shipping_Client</GameBin>
+    <SandBoxBin>$(GameRoot)/Modules/SandBox/bin/Win64_Shipping_Client</SandBoxBin>
+    <McmAssembly Condition="'$(McmAssembly)' == ''">$(GameRoot)/Modules/TAOM.Dependencies/bin/Win64_Shipping_Client/MCMv5.dll</McmAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Source/*.cs" />
+    <Reference Include="$(GameBin)/TaleWorlds.*.dll" Private="false" />
+    <Reference Include="$(SandBoxBin)/SandBox.ViewModelCollection.dll" Private="false" />
+    <Reference Include="$(GameRoot)/Modules/TAOM.Dependencies/bin/Win64_Shipping_Client/0Harmony.dll" Private="false" />
+    <Reference Include="$(McmAssembly)" Private="false" />
+  </ItemGroup>
+</Project>

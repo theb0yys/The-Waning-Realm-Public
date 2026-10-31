@@ -1,0 +1,13 @@
+Directory.Build.props
+.vs/
+bin/
+obj/
+build/
+release/
+*.dll
+*.pdb
+*.cache
+*.user
+*.suo
+*.zip
+*.7z

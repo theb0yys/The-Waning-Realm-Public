@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Custom Battle Reforged" />
+  <Id value="CustomBattleReforged" />
+  <Version value="v0.1.2" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="CustomBattle" />
+    <DependedModule Id="TAOM.Dependencies" />
+    <DependedModule Id="TAOM" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="Custom Battle Reforged" />
+      <DLLName value="CustomBattleReforged.dll" />
+      <SubModuleClassType value="CustomBattleReforged.SubModule" />
+      <Tags><Tag key="DedicatedServerType" value="none" /><Tag key="IsNoRenderModeElement" value="false" /></Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls />
+</Module>

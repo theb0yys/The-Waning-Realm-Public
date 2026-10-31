@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>CustomBattleReturn</AssemblyName>
+    <RootNamespace>CustomBattleReturn</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <GameRoot Condition="'$(GameRoot)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameRoot>
+    <HarmonyDllPath Condition="'$(HarmonyDllPath)' == ''">$(GameRoot)\Modules\Bannerlord.Harmony\bin\Win64_Shipping_Client\0Harmony.dll</HarmonyDllPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\*.cs" />
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDllPath)</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Library"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.ObjectSystem"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.ObjectSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.DotNet"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.DotNet.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Localization"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.Localization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.CustomBattle"><HintPath>$(GameRoot)\Modules\CustomBattle\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.CustomBattle.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.GauntletUI"><HintPath>$(GameRoot)\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.GauntletUI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View"><HintPath>$(GameRoot)\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection"><HintPath>$(GameRoot)\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

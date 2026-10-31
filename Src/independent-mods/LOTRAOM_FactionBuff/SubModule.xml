@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SubModule.xml
+  Place this in:  Modules/LOTRAOM_FactionBuff/SubModule.xml
+
+  Adjust DependedModules to match your actual TAOM base mod ID.
+-->
+<Module>
+  <Name value="LOTRAOM Faction Food &amp; Prisoner Buffs" />
+  <Id value="LOTRAOM_FactionBuff" />
+  <Version value="v1.3.0" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <Official value="false" />
+
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="StoryMode" Optional="true" />
+    <DependedModule Id="CustomBattle" Optional="true" />
+    <DependedModule Id="TAOM" />
+    <DependedModule Id="TAOM.Dependencies" Optional="false" />
+  </DependedModules>
+
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="TAOM.Dependencies" order="LoadBeforeThis" optional="false" />
+  </DependedModuleMetadatas>
+
+  <SubModules>
+    <SubModule>
+      <Name value="LOTRAOM_FactionBuff" />
+      <DLLName value="LOTRAOM_FactionBuff.dll" />
+      <SubModuleClassType value="LOTRAOM.FactionBuff.SubModule" />
+      <Assemblies />
+    </SubModule>
+  </SubModules>
+
+  <!-- Register the GameTexts XML so strings are available in-game -->
+  <Xmls>
+    <XmlNode>
+      <XmlName id="GameText" path="FactionBuff_GameTexts" />
+    </XmlNode>
+  </Xmls>
+
+  <SupportedVersions>
+    <Version value="v1.4.15" />
+  </SupportedVersions>
+</Module>

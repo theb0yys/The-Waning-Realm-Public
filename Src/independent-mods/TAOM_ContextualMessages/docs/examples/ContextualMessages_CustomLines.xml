@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContextualMessageDataPacks>
+  <Pool name="BattleWin">
+    <Line>The line held, and the road remains open.</Line>
+  </Pool>
+  <Pool name="QuestCompleted">
+    <Message>The record is closed, but the consequences are still walking.</Message>
+  </Pool>
+</ContextualMessageDataPacks>

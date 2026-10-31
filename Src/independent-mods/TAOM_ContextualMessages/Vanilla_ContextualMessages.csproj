@@ -1,0 +1,111 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Nullable>disable</Nullable>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>Vanilla_ContextualMessages</AssemblyName>
+    <RootNamespace>ContextualMessages</RootNamespace>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+
+    <OutputPath>build\bin\Win64_Shipping_Client\</OutputPath>
+    <BaseOutputPath>build\bin\</BaseOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+
+    <BannerlordPath Condition="'$(BannerlordPath)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordPath>
+    <BannerlordReferenceDir>$(BannerlordPath)\bin\Win64_Shipping_Client</BannerlordReferenceDir>
+
+    <ModuleDeployRoot Condition="'$(ModuleDeployRoot)' == ''">$(MSBuildProjectDirectory)\release\Modules\Vanilla_ContextualMessages</ModuleDeployRoot>
+    <ModuleBinDeployPath>$(ModuleDeployRoot)\bin\Win64_Shipping_Client</ModuleBinDeployPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**\*.cs" />
+    <Compile Remove="build\**\*.cs" />
+    <EmbeddedResource Remove="obj\**\*" />
+    <EmbeddedResource Remove="build\**\*" />
+    <None Remove="obj\**\*" />
+    <None Remove="build\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="TaleWorlds.CampaignSystem">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.CampaignSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.GauntletUI.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Library">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.InputSystem">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.InputSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Localization">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.Localization.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.MountAndBlade.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ObjectSystem">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.ObjectSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.SaveSystem">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.SaveSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ScreenSystem">
+      <HintPath>$(BannerlordReferenceDir)\TaleWorlds.ScreenSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ModuleManifest Include="Content\SubModule.xml" />
+    <None Include="GUI\Prefabs\Vanilla_ContextualMessages.xml" />
+    <None Include="ModuleData\ContextualMessages_DataPacks.xml" />
+  </ItemGroup>
+
+  <Target Name="CopyModulePayload" AfterTargets="Build">
+    <MakeDir Directories="$(ModuleBinDeployPath)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModuleBinDeployPath)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb"
+          DestinationFolder="$(ModuleBinDeployPath)"
+          Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+    <Copy SourceFiles="@(ModuleManifest)"
+          DestinationFiles="$(ModuleDeployRoot)\SubModule.xml" />
+    <ItemGroup>
+      <GuiFiles Include="$(MSBuildProjectDirectory)\GUI\**\*" Condition="Exists('$(MSBuildProjectDirectory)\GUI')" />
+      <ModuleDataFiles Include="$(MSBuildProjectDirectory)\ModuleData\**\*" Condition="Exists('$(MSBuildProjectDirectory)\ModuleData')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModuleDataFiles)"
+          DestinationFiles="@(ModuleDataFiles->'$(ModuleDeployRoot)\ModuleData\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true"
+          Condition="'@(ModuleDataFiles)' != ''" />
+    <Copy SourceFiles="@(GuiFiles)"
+          DestinationFiles="@(GuiFiles->'$(ModuleDeployRoot)\GUI\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true"
+          Condition="'@(GuiFiles)' != ''" />
+  </Target>
+
+</Project>

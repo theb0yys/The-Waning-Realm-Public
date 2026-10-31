@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework><OutputType>Exe</OutputType>
+    <LangVersion>7.3</LangVersion><PlatformTarget>x64</PlatformTarget>
+    <GameRoot Condition="'$(GameRoot)' == ''">A:/SteamLibrary/steamapps/common/Mount &amp; Blade II Bannerlord</GameRoot>
+    <McmAssembly Condition="'$(McmAssembly)' == ''">$(GameRoot)/Modules/TAOM.Dependencies/bin/Win64_Shipping_Client/MCMv5.dll</McmAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../CampaignMapVisibility.csproj" />
+    <Reference Include="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.*.dll" Private="false" />
+    <Reference Include="$(GameRoot)/Modules/SandBox/bin/Win64_Shipping_Client/SandBox.ViewModelCollection.dll" Private="false" />
+    <Reference Include="$(GameRoot)/Modules/TAOM.Dependencies/bin/Win64_Shipping_Client/0Harmony.dll" Private="false" />
+    <Reference Include="$(McmAssembly)" Private="false" />
+  </ItemGroup>
+</Project>

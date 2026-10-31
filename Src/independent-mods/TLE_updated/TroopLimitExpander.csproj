@@ -1,0 +1,102 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <AssemblyName>WANINGTROOPLIMITEXPANDER</AssemblyName>
+    <RootNamespace>TroopLimitExpander</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Platforms>x64</Platforms>
+    <Platform>x64</Platform>
+    <OutputPath>bin\Win64_Shipping_Client\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <Nullable>enable</Nullable>
+    <!-- Suppress auto-generated assembly attributes — we keep Properties\AssemblyInfo.cs -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Disable SDK default glob so our explicit <Compile> list is the only source -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <!-- Explicit compile list -->
+  <ItemGroup>
+    <Compile Include="Entry\SubModule.cs" />
+    <Compile Include="Configuration\TroopLimitSettings.cs" />
+    <Compile Include="Configuration\TroopLimitMcmSettings.cs" />
+    <Compile Include="Patches\BattleSizePatch.cs" />
+    <Compile Include="Patches\CustomBattleSpawnPatch.cs" />
+    <Compile Include="Patches\CustomBattleArmySizeWidgetPatch.cs" />
+    <Compile Include="Patches\SiegeSpawnPatch.cs" />
+    <Compile Include="UI\TroopLimitBattleOverlayView.cs" />
+    <Compile Include="UI\TroopLimitBattleOverlayVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <!-- Resolve Bannerlord install path from env var or fallback to A: drive -->
+  <PropertyGroup>
+    <BannerlordPath Condition="'$(BannerlordPath)' == ''">$(BANNERLORD_PATH)</BannerlordPath>
+    <BannerlordPath Condition="'$(BannerlordPath)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordPath>
+    <BannerlordBinPath>$(BannerlordPath)\bin\Win64_Shipping_Client</BannerlordBinPath>
+    <BannerlordNativeBinPath>$(BannerlordPath)\Modules\Native\bin\Win64_Shipping_Client</BannerlordNativeBinPath>
+    <TAOMDependenciesPath>$(BannerlordPath)\Modules\TAOM.Dependencies\bin\Win64_Shipping_Client</TAOMDependenciesPath>
+    <SharedLibPath>$(MSBuildThisFileDirectory)..\_shared\lib</SharedLibPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(TAOMDependenciesPath)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MCMv5">
+      <HintPath>$(TAOMDependenciesPath)\MCMv5.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Library">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.MountAndBlade.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.DotNet">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.DotNet.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.CustomBattle">
+      <HintPath>$(BannerlordPath)\Modules\CustomBattle\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.CustomBattle.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.GauntletUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ScreenSystem">
+      <HintPath>$(BannerlordBinPath)\TaleWorlds.ScreenSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View">
+      <HintPath>$(BannerlordNativeBinPath)\TaleWorlds.MountAndBlade.View.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Auto-deploy to Documents Modules folder after build -->
+  <Target Name="DeployToModules" AfterTargets="Build">
+    <PropertyGroup>
+      <DeployTarget Condition="'$(BANNERLORD_MOD_DEPLOY)' != ''">$(BANNERLORD_MOD_DEPLOY)\</DeployTarget>
+      <DeployTarget Condition="'$(DeployTarget)' == ''">$(USERPROFILE)\Documents\Mount and Blade II Bannerlord\Modules\WANINGTROOPLIMITEXPANDER\bin\Win64_Shipping_Client\</DeployTarget>
+    </PropertyGroup>
+    <MakeDir Directories="$(DeployTarget)" Condition="!Exists('$(DeployTarget)')" ContinueOnError="true" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(DeployTarget)" ContinueOnError="true" />
+    <Message Text="[TroopLimitExpander] Deployed → $(DeployTarget)" Importance="high" />
+  </Target>
+
+</Project>

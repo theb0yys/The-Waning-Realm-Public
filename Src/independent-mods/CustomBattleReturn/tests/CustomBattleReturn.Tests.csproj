@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\src\*.cs" />
+    <Compile Include="*.cs" />
+    <Reference Include="0Harmony"><HintPath>$(HarmonyDllPath)</HintPath><Private>true</Private></Reference>
+  </ItemGroup>
+</Project>

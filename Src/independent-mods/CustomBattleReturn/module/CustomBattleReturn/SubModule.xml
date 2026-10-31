@@ -1,0 +1,24 @@
+<Module>
+  <Name value="Custom Battle Return" />
+  <Id value="CustomBattleReturn" />
+  <Version value="v1.0.0" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Bannerlord.Harmony" />
+    <DependedModule Id="Native" />
+    <DependedModule Id="CustomBattle" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="Custom Battle Return" />
+      <DLLName value="CustomBattleReturn.dll" />
+      <SubModuleClassType value="CustomBattleReturn.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls />
+</Module>

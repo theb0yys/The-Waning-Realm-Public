@@ -1,0 +1,150 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#050604FF" AlphaFactor="0.86">
+      <Children>
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="1508" SuggestedHeight="860" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="flat_panel_9" Color="#121512FF" AlphaFactor="0.98">
+          <Children>
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="12" MarginRight="12" MarginTop="12" MarginBottom="12" Sprite="BlankWhiteSquare_9" Color="#243021FF" AlphaFactor="0.88" />
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="22" MarginRight="22" MarginTop="22" MarginBottom="22" Sprite="BlankWhiteSquare_9" Color="#101311FF" AlphaFactor="0.96" />
+
+            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="122" MarginLeft="30" MarginRight="30" MarginTop="30" Sprite="BlankWhiteSquare_9" Color="#233429FF" AlphaFactor="0.98">
+              <Children>
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="4" VerticalAlignment="Top" Sprite="BlankWhiteSquare_9" Color="#8DC16EFF" AlphaFactor="0.92" />
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="4" VerticalAlignment="Bottom" Sprite="BlankWhiteSquare_9" Color="#B48A42FF" AlphaFactor="0.92" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="720" HorizontalAlignment="Center" MarginTop="10" Text="@TitleText" Brush.FontSize="34" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="1140" HorizontalAlignment="Center" MarginTop="50" Text="@SignalText" Brush.FontSize="18" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="1140" HorizontalAlignment="Center" MarginTop="79" Text="@ContextText" Brush.FontSize="15" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="1140" HorizontalAlignment="Center" MarginTop="101" Text="@CadenceText" Brush.FontSize="14" />
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="108" SuggestedHeight="36" HorizontalAlignment="Right" MarginRight="20" MarginTop="42" Command.Click="ExecuteClose">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#702B24FF" AlphaFactor="0.98" />
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="3" VerticalAlignment="Bottom" Sprite="BlankWhiteSquare_9" Color="#C96A55FF" AlphaFactor="0.72" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Close" Brush.FontSize="16" />
+                  </Children>
+                </ButtonWidget>
+              </Children>
+            </Widget>
+
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="394" SuggestedHeight="668" MarginLeft="30" MarginTop="172" Sprite="BlankWhiteSquare_9" Color="#1F2A24FF" AlphaFactor="0.98">
+              <Children>
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="4" VerticalAlignment="Top" Sprite="BlankWhiteSquare_9" Color="#8DC16EFF" AlphaFactor="0.90" />
+                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="15" MarginLeft="18" Text="Doctrine" Brush.FontSize="24" />
+
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="150" MarginLeft="16" MarginRight="16" MarginTop="58" Sprite="BlankWhiteSquare_9" Color="#D9C9AAFF" AlphaFactor="0.97">
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="15" MarginLeft="14" MarginRight="14" Text="@SummaryLineOne" Brush.FontSize="16" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="53" MarginLeft="14" MarginRight="14" Text="@SummaryLineTwo" Brush.FontSize="16" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="91" MarginLeft="14" MarginRight="14" Text="@SummaryLineThree" Brush.FontSize="16" />
+                  </Children>
+                </Widget>
+
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="110" MarginLeft="16" MarginRight="16" MarginTop="224" Sprite="BlankWhiteSquare_9" Color="#E4D7BEFF" AlphaFactor="0.97">
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="10" MarginLeft="14" Text="Order" Brush.FontSize="20" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="45" MarginLeft="14" MarginRight="14" Text="@DirectiveText" Brush.FontSize="14" />
+                  </Children>
+                </Widget>
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="42" MarginLeft="16" MarginRight="16" MarginTop="356" Command.Click="ExecuteCycleMode">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#465948FF" AlphaFactor="0.98" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="@ModeButtonText" Brush.FontSize="15" />
+                  </Children>
+                </ButtonWidget>
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="42" MarginLeft="16" MarginRight="16" MarginTop="408" Command.Click="ExecuteToggleEffects">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#5B6045FF" AlphaFactor="0.98" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="@EffectsButtonText" Brush.FontSize="15" />
+                  </Children>
+                </ButtonWidget>
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="42" MarginLeft="16" MarginRight="16" MarginTop="460" Command.Click="ExecuteToggleReports">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#6D6140FF" AlphaFactor="0.98" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="@ReportsButtonText" Brush.FontSize="15" />
+                  </Children>
+                </ButtonWidget>
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="174" SuggestedHeight="38" MarginLeft="16" MarginTop="536" Command.Click="ExecuteStrategicSummary">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#785F34FF" AlphaFactor="0.98" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Summary Ping" Brush.FontSize="14" />
+                  </Children>
+                </ButtonWidget>
+
+                <ButtonWidget DoNotPassEventsToChildren="true" UpdateChildrenStates="true" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="174" SuggestedHeight="38" MarginLeft="204" MarginTop="536" Command.Click="ExecuteRefresh">
+                  <Children>
+                    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#5D674BFF" AlphaFactor="0.98" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Refresh" Brush.FontSize="14" />
+                  </Children>
+                </ButtonWidget>
+              </Children>
+            </Widget>
+
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="1048" SuggestedHeight="668" MarginLeft="444" MarginTop="172" Sprite="BlankWhiteSquare_9" Color="#D8C8A9FF" AlphaFactor="0.97">
+              <Children>
+                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="4" VerticalAlignment="Top" Sprite="BlankWhiteSquare_9" Color="#8DC16EFF" AlphaFactor="0.90" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="540" MarginTop="16" MarginLeft="22" Text="Strategic Signals" Brush.FontSize="25" />
+
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="168" SuggestedHeight="106" MarginLeft="22" MarginTop="62" Sprite="BlankWhiteSquare_9" Color="#243429FF" AlphaFactor="0.98">
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="18" Text="Score" Brush.FontSize="15" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="52" Text="@ScoreText" Brush.FontSize="26" />
+                  </Children>
+                </Widget>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="250" SuggestedHeight="106" MarginLeft="208" MarginTop="62" Sprite="BlankWhiteSquare_9" Color="#243429FF" AlphaFactor="0.98">
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="18" Text="Readiness" Brush.FontSize="15" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="52" Text="@ReadinessText" Brush.FontSize="22" />
+                  </Children>
+                </Widget>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="250" SuggestedHeight="106" MarginLeft="476" MarginTop="62" Sprite="BlankWhiteSquare_9" Color="#243429FF" AlphaFactor="0.98">
+                  <Children>
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="18" Text="Morale" Brush.FontSize="15" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" MarginTop="52" Text="@MoraleText" Brush.FontSize="22" />
+                  </Children>
+                </Widget>
+
+                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginTop="220" MarginLeft="30" MarginRight="30" HorizontalAlignment="Center" Text="@EmptyText" Brush.FontSize="20" IsVisible="@ShowEmptyText" />
+
+                <ScrollablePanel WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" MarginLeft="22" MarginTop="188" MarginRight="30" MarginBottom="24" AutoHideScrollBars="true" ClipRect="SignalClipRect" InnerPanel="SignalClipRect\SignalListPanel" VerticalScrollbar="..\SignalScrollbar">
+                  <Children>
+                    <Widget Id="SignalClipRect" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" ClipContents="true">
+                      <Children>
+                        <ListPanel DataSource="{Signals}" Id="SignalListPanel" WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" StackLayout.LayoutMethod="VerticalBottomToTop">
+                          <ItemTemplate>
+                            <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="76" MarginBottom="8">
+                              <Children>
+                                <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare_9" Color="#EFE2C8FF" AlphaFactor="0.98" />
+                                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="7" HorizontalAlignment="Left" Sprite="BlankWhiteSquare_9" Color="#5E9E60FF" AlphaFactor="0.95" IsVisible="@IsGood" />
+                                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="7" HorizontalAlignment="Left" Sprite="BlankWhiteSquare_9" Color="#C99A2AFF" AlphaFactor="0.95" IsVisible="@IsWatch" />
+                                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="7" HorizontalAlignment="Left" Sprite="BlankWhiteSquare_9" Color="#AC3B32FF" AlphaFactor="0.95" IsVisible="@IsBad" />
+                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="150" MarginLeft="20" MarginTop="12" Text="@Name" Brush.FontSize="19" />
+                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="170" HorizontalAlignment="Right" MarginRight="118" MarginTop="14" Text="@ValueText" Brush.FontSize="16" />
+                                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="92" HorizontalAlignment="Right" MarginRight="18" MarginTop="14" Text="@StatusText" Brush.FontSize="13" />
+                                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="CoverChildren" MarginLeft="20" MarginRight="20" MarginTop="43" Text="@DetailText" Brush.FontSize="14" />
+                              </Children>
+                            </Widget>
+                          </ItemTemplate>
+                        </ListPanel>
+                      </Children>
+                    </Widget>
+                  </Children>
+                </ScrollablePanel>
+
+                <ScrollbarWidget Id="SignalScrollbar" WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="9" HorizontalAlignment="Right" MarginTop="188" MarginRight="14" MarginBottom="24" AlignmentAxis="Vertical" Handle="SignalScrollbarHandle" MaxValue="100" MinValue="0">
+                  <Children>
+                    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="4" HorizontalAlignment="Center" Sprite="BlankWhiteSquare_9" Color="#3D332AFF" AlphaFactor="0.38" />
+                    <ImageWidget Id="SignalScrollbarHandle" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedHeight="12" SuggestedWidth="9" HorizontalAlignment="Center" Brush="FaceGen.Scrollbar.Handle" />
+                  </Children>
+                </ScrollbarWidget>
+              </Children>
+            </Widget>
+          </Children>
+        </Widget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

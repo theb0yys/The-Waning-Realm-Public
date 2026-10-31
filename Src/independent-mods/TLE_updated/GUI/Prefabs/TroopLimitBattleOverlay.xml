@@ -1,0 +1,110 @@
+<Prefab>
+  <Window>
+    <Widget Id="TroopLimitOverlayRoot"
+            WidthSizePolicy="CoverChildren"
+            HeightSizePolicy="CoverChildren"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            MarginLeft="16"
+            MarginTop="92"
+            IsVisible="@IsPanelVisible"
+            DoNotAcceptEvents="true">
+      <Children>
+        <Widget Id="TroopLimitOverlayPanel"
+                WidthSizePolicy="Fixed"
+                HeightSizePolicy="Fixed"
+                SuggestedWidth="282"
+                SuggestedHeight="166"
+                Sprite="BlankWhiteSquare_9"
+                Color="#080604FF"
+                AlphaFactor="0.88"
+                DoNotAcceptEvents="true">
+          <Children>
+            <Widget WidthSizePolicy="StretchToParent"
+                    HeightSizePolicy="Fixed"
+                    SuggestedHeight="3"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Sprite="BlankWhiteSquare_9"
+                    Color="#9C7839FF"
+                    AlphaFactor="0.95"
+                    DoNotAcceptEvents="true" />
+
+            <Widget WidthSizePolicy="StretchToParent"
+                    HeightSizePolicy="StretchToParent"
+                    Sprite="conversation_frame_canvas_9"
+                    Color="#C49A55FF"
+                    AlphaFactor="0.65"
+                    DoNotAcceptEvents="true" />
+
+            <ListPanel Id="TroopLimitOverlayContent"
+                       WidthSizePolicy="StretchToParent"
+                       HeightSizePolicy="StretchToParent"
+                       StackLayout.LayoutMethod="VerticalTopToBottom"
+                       MarginLeft="12"
+                       MarginRight="12"
+                       MarginTop="8"
+                       MarginBottom="8"
+                       DoNotAcceptEvents="true">
+              <Children>
+                <TextWidget WidthSizePolicy="StretchToParent"
+                            HeightSizePolicy="Fixed"
+                            SuggestedHeight="25"
+                            Brush="Mission.Objective.Tracker.Title.Text"
+                            Brush.FontSize="18"
+                            Brush.TextHorizontalAlignment="Left"
+                            Text="TROOP LIMIT"
+                            ClipContents="false"
+                            DoNotAcceptEvents="true" />
+
+                <Widget WidthSizePolicy="StretchToParent"
+                        HeightSizePolicy="Fixed"
+                        SuggestedHeight="1"
+                        Sprite="BlankWhiteSquare_9"
+                        Color="#9C783980"
+                        AlphaFactor="0.75"
+                        MarginBottom="5"
+                        DoNotAcceptEvents="true" />
+
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="22" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="true">
+                  <Children>
+                    <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="98" Brush="Mission.Objective.Tracker.Description.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Left" Text="Units" ClipContents="false" DoNotAcceptEvents="true" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Mission.Objective.Tracker.Progress.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Right" Text="@TotalUnitsText" ClipContents="false" DoNotAcceptEvents="true" />
+                  </Children>
+                </ListPanel>
+
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="22" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="true">
+                  <Children>
+                    <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="98" Brush="Mission.Objective.Tracker.Description.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Left" Text="Active" ClipContents="false" DoNotAcceptEvents="true" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Mission.Objective.Tracker.Progress.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Right" Text="@PlayerActiveText" ClipContents="false" DoNotAcceptEvents="true" />
+                  </Children>
+                </ListPanel>
+
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="22" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="true">
+                  <Children>
+                    <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="98" Brush="Mission.Objective.Tracker.Description.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Left" Text="Wave" ClipContents="false" DoNotAcceptEvents="true" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Mission.Objective.Tracker.Progress.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Right" Text="@PlayerWaveText" ClipContents="false" DoNotAcceptEvents="true" />
+                  </Children>
+                </ListPanel>
+
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="22" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="true">
+                  <Children>
+                    <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="98" Brush="Mission.Objective.Tracker.Description.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Left" Text="Deaths" ClipContents="false" DoNotAcceptEvents="true" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Mission.Objective.Tracker.Progress.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Right" Text="@MissionDeathsText" ClipContents="false" DoNotAcceptEvents="true" />
+                  </Children>
+                </ListPanel>
+
+                <ListPanel WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="22" StackLayout.LayoutMethod="HorizontalLeftToRight" DoNotAcceptEvents="true">
+                  <Children>
+                    <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="StretchToParent" SuggestedWidth="98" Brush="Mission.Objective.Tracker.Description.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Left" Text="Kills" ClipContents="false" DoNotAcceptEvents="true" />
+                    <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Brush="Mission.Objective.Tracker.Progress.Text" Brush.FontSize="15" Brush.TextHorizontalAlignment="Right" Text="@PlayerKillsText" ClipContents="false" DoNotAcceptEvents="true" />
+                  </Children>
+                </ListPanel>
+              </Children>
+            </ListPanel>
+          </Children>
+        </Widget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

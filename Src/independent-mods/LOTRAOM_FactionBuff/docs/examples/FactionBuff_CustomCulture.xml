@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FactionBuffDataPacks>
+  <Culture id="new_culture"
+           cloneFrom="gondor"
+           extrasCloneFrom="gondor"
+           alignment="Good"
+           foodItem="grain"
+           foodBonus="6"
+           peakSeason="Autumn">
+    <Keys bucket="foodStocked">
+      custom_food_stocked_new_culture_0 custom_food_stocked_new_culture_1
+    </Keys>
+    <Keys bucket="prisonerLow">
+      custom_prisoner_low_new_culture_0
+    </Keys>
+  </Culture>
+</FactionBuffDataPacks>

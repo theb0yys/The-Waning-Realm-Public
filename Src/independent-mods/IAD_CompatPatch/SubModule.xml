@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Injuries And Diseases Compat Patch" />
+  <Id value="IAD_CompatPatch" />
+  <Version value="v1.0.1" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="InjuriesAndDiseases" Optional="false" />
+    <DependedModule Id="TAOM.Dependencies" Optional="false"/>
+  </DependedModules>
+
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="TAOM.Dependencies" order="LoadBeforeThis" optional="false" />
+  </DependedModuleMetadatas>
+
+  <SubModules>
+    <SubModule>
+      <Name value="IAD_CompatPatch" />
+      <DLLName value="IAD_CompatPatch.dll" />
+      <SubModuleClassType value="IAD_CompatPatch.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+</SubModule>
+  </SubModules>
+</Module>

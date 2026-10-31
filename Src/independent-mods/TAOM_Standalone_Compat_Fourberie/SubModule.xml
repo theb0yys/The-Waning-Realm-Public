@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="TAOM Fourberie Compat Patch" />
+  <Id value="TAOM_Standalone_Compat_Fourberie" />
+  <Version value="v1.0.3" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Fourberie" Optional="false" />
+    <DependedModule Id="TAOM.Dependencies" Optional="false"/>
+  </DependedModules>
+
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Fourberie" order="LoadBeforeThis" optional="false" />
+    <DependedModuleMetadata id="TAOM.Dependencies" order="LoadBeforeThis" optional="false" />
+  </DependedModuleMetadatas>
+
+  <SubModules>
+    <SubModule>
+      <Name value="Fourberie_CompatPatch" />
+      <DLLName value="Fourberie_CompatPatch.dll" />
+      <SubModuleClassType value="Fourberie_CompatPatch.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+</SubModule>
+  </SubModules>
+</Module>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="TAOM Less Menus More Immersion Patch" />
+  <Id value="TAOM-LESS-MENUS_MORE-IMMERSION_PATCH" />
+  <Version value="v1.0.1" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" Optional="false" />
+    <DependedModule Id="SandBoxCore" Optional="false" />
+    <DependedModule Id="Sandbox" Optional="false" />
+    <DependedModule Id="StoryMode" Optional="false" />
+    <DependedModule Id="TAOM.Dependencies" Optional="false" />
+  </DependedModules>
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="TAOM.Dependencies" order="LoadBeforeThis" optional="false" />
+  </DependedModuleMetadatas>
+  <SubModules>
+    <SubModule>
+      <Name value="TAOM-LESS-MENUS_MORE-IMMERSION_PATCH" />
+      <DLLName value="TAOM-LESS-MENUS_MORE-IMMERSION_PATCH.dll" />
+      <SubModuleClassType value="LessMenusMoreImmersion.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>

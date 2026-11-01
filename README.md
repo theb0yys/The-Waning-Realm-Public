@@ -1,6 +1,6 @@
 # The Waning Realm Public
 
-Public source for 26 Mount & Blade II: Bannerlord mod and compatibility projects. The 11 other mod projects live under `Src/independent-mods/`; 14 compatibility patches and Xorberax Pack Control are grouped under [`Src/compatibility-patches/`](Src/compatibility-patches/). Each project keeps its own implementation and internal layout. The patch folder also includes the shared source helper used by seven patches.
+Public source for 28 Mount & Blade II: Bannerlord mod and compatibility projects. The 13 other mod projects live under `Src/independent-mods/`; 14 compatibility patches and Xorberax Pack Control are grouped under [`Src/compatibility-patches/`](Src/compatibility-patches/). Each project keeps its own implementation and internal layout. The patch folder also includes the shared source helper used by seven patches.
 
 This is a source collection. Compiled modules, game assets and external dependencies are not bundled. Choose the projects you need; the collection is not a single combined mod or an install-ready release.
 
@@ -34,6 +34,8 @@ This is a source collection. Compiled modules, game assets and external dependen
 | [Retinues Clan Colours - TAOM 2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/) | Retinues customised-troop clan-colour compatibility. | `TAOM_Standalone_Compat_Retinues` |
 | [Xorberax-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_XorberaxCompatibility/) | TAOM creature-cleave compatibility with Xorberax Legacy. | `TAOM_XorberaxCompatibility` |
 | [Xorberax TFTAOM Experience](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/) | Supporting module host and configuration control for the Xorberax pack. | `Xorberax_TFTAOM_Experience` |
+| [TAOM Cheat Panel](Src/independent-mods/cheat_panel/) | Standalone cheat menus, configurable opening hotkey, MCM settings and player progression controls. | `TAOM_CheatPanel` |
+| [TAOM Lord's Ledger](Src/independent-mods/TAOM_LordsLedger/) | Settlement dashboard with fief warnings, governance summaries and report export. | `TAOM_LordsLedger` |
 
 ## Runtime dependencies
 
@@ -67,6 +69,8 @@ The entries below reproduce the published `SubModule.xml` declarations. Names ar
 | [Retinues Clan Colours - TAOM 2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `Bannerlord.Harmony`, `TAOM.Dependencies`, `TAOM`, `Retinues` | None declared |
 | [Xorberax-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_XorberaxCompatibility/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `TAOM`, `XorberaxLegacy` | None declared |
 | [Xorberax TFTAOM Experience](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `CustomBattle`, `StoryMode`, `TAOM.Dependencies`, `TAOM` | None declared |
+| [TAOM Cheat Panel](Src/independent-mods/cheat_panel/core/TAOM_CheatPanel/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `Bannerlord.Harmony`, `Bannerlord.MBOptionScreen` | `StoryMode` |
+| [TAOM Lord's Ledger](Src/independent-mods/TAOM_LordsLedger/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `TAOM.Dependencies` | None declared |
 
 ### Dependency and version notes
 
@@ -81,9 +85,11 @@ The entries below reproduce the published `SubModule.xml` declarations. Names ar
 - My Little Warband also requires the original `MyLittleWarband` installation and its supported DLL, XML and GUI files, even though it is not listed in the required-module list. Follow its [README](Src/compatibility-patches/TAOM_Standalone_Compat_MyLittleWarband/README.md): the compatibility module must load before My Little Warband.
 - Some bridges validate exact dependency hashes or module identities. A matching module name alone does not establish compatibility. Xorberax Pack Control also expects its managed-module and dependency DLL payloads; those binaries are not included in this source repository.
 
+- Cheat Panel declares supported version `v1.4.5` in its manifest, while its later project notes describe local `v1.4.8` work. Lords Ledger declares `v1.4.15`. These existing declarations are preserved; this publication does not resolve or certify game-version compatibility.
+
 ## Building from source
 
-The 26 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`). Use a Windows C# / MSBuild toolchain with the corresponding targeting pack; SDK-style projects also require a compatible .NET SDK. Test projects may have different framework requirements.
+The 28 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`). Use a Windows C# / MSBuild toolchain with the corresponding targeting pack; SDK-style projects also require a compatible .NET SDK. Test projects may have different framework requirements.
 
 1. Open the individual project below. There is no root solution for the entire collection.
 2. Inspect its `.csproj` and any included build script. Set the game and dependency paths for your machine; some references use local paths or MSBuild properties such as `GameRoot` and `GameBin`. Match the game assemblies to that project's declared version and APIs.
@@ -119,15 +125,19 @@ The 26 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`).
 | `TAOM_Standalone_Compat_Retinues` | [TAOM_Standalone_Compat_Retinues.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/TAOM_Standalone_Compat_Retinues.csproj) |
 | `TAOM_XorberaxCompatibility` | [TAOM_XorberaxCompatibility.csproj](Src/compatibility-patches/TAOM_XorberaxCompatibility/TAOM_XorberaxCompatibility.csproj) |
 | `Xorberax_TFTAOM_Pack_Control` | [Xorberax_TFTAOM_Pack_Control.csproj](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/Xorberax_TFTAOM_Pack_Control.csproj) |
+| `cheat_panel` | [TAOM_CheatPanel.csproj](Src/independent-mods/cheat_panel/core/TAOM_CheatPanel/TAOM_CheatPanel.csproj) |
+| `TAOM_LordsLedger` | [TAOM_LordsLedger.csproj](Src/independent-mods/TAOM_LordsLedger/TAOM_LordsLedger.csproj) |
 
 Seven patch projects link `../_SharedCompat/FinalizerInfrastructure.cs`. Keep the [_SharedCompat](Src/compatibility-patches/_SharedCompat/) folder alongside those projects when building. AIInfluence, Retinues and Xorberax Compatibility reference Harmony from the installed `Bannerlord.Harmony` directory in their project files; Pack Control additionally references MCMv5. These build paths are separate from the manifest declarations.
+
+Cheat Panel and Lords Ledger use optional local game-path override files. Those machine-specific files are not included. Supply the game paths through the project properties or your own local overrides. Cheat Panel retains its standalone settings-check project; its Utilities Hub extraction test and two local evidence reports are omitted.
 
 ## Repository layout
 
 ```text
 Src/
   independent-mods/
-    <project>/           # 11 independent mod projects
+    <project>/           # 13 independent mod projects
   compatibility-patches/
     <patch>/             # 14 patches, Pack Control and _SharedCompat
       ...                # Source, text definitions and available docs/tests

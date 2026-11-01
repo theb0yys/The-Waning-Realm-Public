@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="TAOM Cheat Panel" />
+  <Id value="TAOM_CheatPanel" />
+  <Version value="v1.0.0.0" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <Official value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="StoryMode" Optional="true" />
+    <DependedModule Id="Bannerlord.Harmony" />
+    <DependedModule Id="Bannerlord.MBOptionScreen" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="TAOM Cheat Panel" />
+      <DLLName value="TAOM_CheatPanel.dll" />
+      <SubModuleClassType value="TAOM_CheatPanel.SubModule" />
+      <Tags />
+    </SubModule>
+  </SubModules>
+  <Xmls />
+  <SupportedVersions><Version value="v1.4.5" /></SupportedVersions>
+</Module>

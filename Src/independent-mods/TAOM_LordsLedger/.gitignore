@@ -1,0 +1,22 @@
+# Build outputs
+bin/
+obj/
+release/
+build/
+*.dll
+*.pdb
+*.cache
+*.zip
+*.7z
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docview
+
+# Local Bannerlord path — DO NOT COMMIT
+# Create your own BannerlordDir.props with your local install path.
+# See the comment inside TAOM_LordsLedger.csproj for instructions.
+BannerlordDir.props

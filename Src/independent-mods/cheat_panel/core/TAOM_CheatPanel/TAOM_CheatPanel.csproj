@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
+  <!--
+    TAOM_CheatPanel
+    Bannerlord · .NET Framework 4.7.2 · x64 only · C# 7.3
+
+    Local machine overrides:
+      Set BannerlordBaseDir or BannerlordBinDir in Directory.Build.props.
+
+    This project also tries a few common fallback locations automatically.
+  -->
+
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{78752050-CE95-4B37-B10E-4DFBD4D64B70}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAOM_CheatPanel</RootNamespace>
+    <AssemblyName>TAOM_CheatPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>7.3</LangVersion>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\Win64_Shipping_Client\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+
+  <!-- Optional repo-local overrides -->
+  <Import Project="Directory.Build.props" Condition="Exists('Directory.Build.props')" />
+
+  <!-- Common path fallbacks: keep these machine-agnostic where possible. -->
+  <PropertyGroup>
+    <BannerlordBaseDir Condition="'$(BannerlordBaseDir)' == '' and Exists('$(ProgramFiles(x86))\Steam\steamapps\common\Mount &amp; Blade II Bannerlord')">$(ProgramFiles(x86))\Steam\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordBaseDir>
+    <BannerlordBaseDir Condition="'$(BannerlordBaseDir)' == '' and Exists('$(ProgramFiles)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord')">$(ProgramFiles)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordBaseDir>
+    <BannerlordBaseDir Condition="'$(BannerlordBaseDir)' == '' and Exists('D:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord')">D:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordBaseDir>
+    <BannerlordBaseDir Condition="'$(BannerlordBaseDir)' == '' and Exists('A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord')">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordBaseDir>
+
+    <BannerlordBinDir Condition="'$(BannerlordBinDir)' == '' and '$(BannerlordBaseDir)' != ''">$(BannerlordBaseDir)\bin\Win64_Shipping_Client</BannerlordBinDir>
+    <BannerlordModulesDir Condition="'$(BannerlordModulesDir)' == '' and '$(BannerlordBaseDir)' != ''">$(BannerlordBaseDir)\Modules</BannerlordModulesDir>
+    <McmAssemblyPath Condition="'$(McmAssemblyPath)' == '' and Exists('$(BannerlordModulesDir)\Bannerlord.MBOptionScreen\bin\Win64_Shipping_Client\MCMv5.dll')">$(BannerlordModulesDir)\Bannerlord.MBOptionScreen\bin\Win64_Shipping_Client\MCMv5.dll</McmAssemblyPath>
+    <McmAssemblyPath Condition="'$(McmAssemblyPath)' == ''">$(BannerlordModulesDir)\TAOM.Dependencies\bin\Win64_Shipping_Client\MCMv5.dll</McmAssemblyPath>
+  </PropertyGroup>
+
+  <Target Name="ValidateReferenceRoots" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(BannerlordBinDir)' == '' or !Exists('$(BannerlordBinDir)\TaleWorlds.Core.dll')"
+           Text="BannerlordBinDir is not configured correctly. Set BannerlordBaseDir or BannerlordBinDir in Directory.Build.props so that TaleWorlds.Core.dll can be found." />
+</Target>
+
+  <ItemGroup>
+    <Compile Remove=".vs/**/*.cs;bin/**/*.cs;obj/**/*.cs;_codex_build/**/*.cs" />
+    <Content Remove=".vs/**/*;bin/**/*;obj/**/*;_codex_build/**/*" />
+    <EmbeddedResource Remove=".vs/**/*;bin/**/*;obj/**/*;_codex_build/**/*" />
+    <None Remove=".vs/**/*;bin/**/*;obj/**/*;_codex_build/**/*" />
+    <!-- User-requested MCM UI and a narrowly scoped player-XP patch. -->
+    <Reference Include="MCMv5">
+      <HintPath>$(McmAssemblyPath)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(BannerlordModulesDir)\Bannerlord.Harmony\bin\Win64_Shipping_Client\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+<!-- BCL -->
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+
+    <!-- TaleWorlds -->
+    <Reference Include="SandBox.View">
+      <HintPath>$(BannerlordModulesDir)\SandBox\bin\Win64_Shipping_Client\SandBox.View.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View">
+      <HintPath>$(BannerlordModulesDir)\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.CampaignSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.CampaignSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.DotNet">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.DotNet.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Engine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.GauntletUI.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.InputSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.InputSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Library">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Localization">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Localization.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ModuleManager">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.ModuleManager.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.MountAndBlade.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ObjectSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.ObjectSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ScreenSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.ScreenSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.SaveSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.SaveSystem.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="SubModule.cs" />
+    <Compile Include="Core/ProgressionRules.cs" />
+    <Compile Include="Core/ProgressionCheatBehavior.cs" />
+    <Compile Include="Core/PlayerXpPatch.cs" />
+    <Compile Include="UI/CheatPanelMcm.cs" />
+    <Compile Include="UI/CheatPanelHotkey.cs" />
+    <Compile Include="UI/CheatPanelHotkeyOptions.cs" />
+    <Compile Include="Core/TroopEquipmentSafety.cs" />
+    <Compile Include="Core/Bannerlord115Compat.cs" />
+    <Compile Include="Core/CustomPartyAiSafety.cs" />
+    <Compile Include="Core/CheatPanelLog.cs" />
+    <Compile Include="Settings/CheatPanelSettings.Store.cs" />
+    <Compile Include="UI/CheatPanelSettingsMenu.cs" />
+
+    <Compile Include="Core\CheatAdjustmentBehavior.cs" />
+    <Compile Include="Core\CheatPanelSettingsAccess.cs" />
+    <Compile Include="Settings\CheatPanelSettings.cs" />
+    <Compile Include="UI\CheatPanelMenuBehavior.cs" />
+    <Compile Include="UI\CheatPanelHost.cs" />
+    <Compile Include="UI\Tabs\PlayerCheatsTabVM.cs" />
+    <Compile Include="UI\Tabs\TimeWeatherTabVM.cs" />
+    <Compile Include="UI\Tabs\TeleportTabVM.cs" />
+    <Compile Include="UI\Tabs\SpawnTroopsTabVM.cs" />
+    <Compile Include="UI\Tabs\SettlementTabVM.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="SubModule.xml" />
+  </ItemGroup>
+
+<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

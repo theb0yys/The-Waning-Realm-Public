@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+          Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1A2B3C4-D5E6-7890-ABCD-123456789ABC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TAOM_LordsLedger</RootNamespace>
+    <AssemblyName>TAOM_LordsLedger</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <!--
+    Supply BannerlordDir using ONE of these methods:
+      (a) Local props file (recommended, do NOT commit):
+              <Project>
+                <PropertyGroup>
+                  <BannerlordDir>A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordDir>
+                </PropertyGroup>
+              </Project>
+      (b) Environment variable:  set BannerlordDir=A:\SteamLibrary\...
+      (c) MSBuild command line:  msbuild /p:BannerlordDir="A:\SteamLibrary\..."
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)BannerlordDir.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)BannerlordDir.props')" />
+  <PropertyGroup>
+    <BannerlordBinDir Condition="'$(BannerlordDir)' != ''">$(BannerlordDir)\bin\Win64_Shipping_Client</BannerlordBinDir>
+    <ModuleName>TAOM_LordsLedger</ModuleName>
+    <ModuleDeployRoot Condition="'$(ModuleDeployRoot)' == '' and '$(BANNERLORD_MOD_DEPLOY)' != ''">$(BANNERLORD_MOD_DEPLOY)\Modules\$(ModuleName)\</ModuleDeployRoot>
+    <ModuleDeployRoot Condition="'$(ModuleDeployRoot)' == '' and '$(AutoDeployToBannerlord)' == 'true' and '$(BannerlordDir)' != ''">$(BannerlordDir)\Modules\$(ModuleName)\</ModuleDeployRoot>
+    <ModuleBinDeployPath Condition="'$(ModuleBinDeployPath)' == '' and '$(ModuleDeployRoot)' != ''">$(ModuleDeployRoot)bin\Win64_Shipping_Client\</ModuleBinDeployPath>
+  </PropertyGroup>
+  <Target Name="ValidateBannerlordDir" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="'$(BannerlordDir)' == ''"
+           Text="BannerlordDir is not set. Create a BannerlordDir.props file next to the csproj — see comment above." />
+  </Target>
+  <!-- ── Debug|AnyCPU ──────────────────────────────────────────────── -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- ── Release|AnyCPU ────────────────────────────────────────────── -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- ── Debug|x64 ─────────────────────────────────────────────────── -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- ── Release|x64 ───────────────────────────────────────────────── -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <!-- Framework references -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TaleWorlds.ObjectSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.ObjectSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!-- TaleWorlds references -->
+  <ItemGroup>
+    <Reference Include="TaleWorlds.CampaignSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.CampaignSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Core">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Library">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Library.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Localization">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Localization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.MountAndBlade">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.MountAndBlade.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.InputSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.Engine.GauntletUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.GauntletUI.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TaleWorlds.ScreenSystem">
+      <HintPath>$(BannerlordBinDir)\TaleWorlds.ScreenSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!-- Source files -->
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Entry\SubModule.cs" />
+    <Compile Include="Source\Models\FiefInfo.cs" />
+    <Compile Include="Source\Models\LedgerBoardSnapshot.cs" />
+    <Compile Include="Source\Configuration\LedgerSettings.cs" />
+    <Compile Include="Source\Services\LedgerDataReader.cs" />
+    <Compile Include="Source\Services\LedgerRenderer.cs" />
+    <Compile Include="Source\Behaviors\LedgerCampaignBehavior.cs" />
+    <Compile Include="UI\LedgerBoardScreen.cs" />
+    <Compile Include="UI\ViewModels\LedgerBoardVM.cs" />
+    <Compile Include="UI\ViewModels\LedgerFiefItemVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\Prefabs\TAOM_LordsLedger.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="DeployToBannerlordModule" AfterTargets="Build" Condition="'$(ModuleDeployRoot)' != ''">
+    <MakeDir Directories="$(ModuleBinDeployPath)" />
+    <ItemGroup>
+      <BuiltFiles Include="$(TargetPath)" />
+      <BuiltFiles Include="$(TargetDir)$(TargetName).pdb" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+      <GuiFiles Include="$(MSBuildProjectDirectory)\GUI\**\*" Condition="Exists('$(MSBuildProjectDirectory)\GUI')" />
+      <RootFiles Include="$(MSBuildProjectDirectory)\SubModule.xml" Condition="Exists('$(MSBuildProjectDirectory)\SubModule.xml')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(BuiltFiles)" DestinationFolder="$(ModuleBinDeployPath)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(RootFiles)" DestinationFolder="$(ModuleDeployRoot)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(GuiFiles)"
+          DestinationFiles="@(GuiFiles->'$(ModuleDeployRoot)GUI\%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true"
+          Condition="'@(GuiFiles)' != ''" />
+    <Message Text="[TAOM_LordsLedger] Deployed to $(ModuleDeployRoot)" Importance="high" />
+  </Target>
+</Project>

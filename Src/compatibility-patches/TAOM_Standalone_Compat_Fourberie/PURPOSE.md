@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Entry/`
+# Purpose — `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/`
 
 ## Purpose
-Owns the Entry implementation/component scope beneath Src/independent-mods/TAOM_Standalone_Compat_Fourberie/.
+Owns the TAOM Standalone Compat Fourberie implementation/component scope beneath Src/compatibility-patches/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Entry/`.
+The implementation responsibility represented by `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

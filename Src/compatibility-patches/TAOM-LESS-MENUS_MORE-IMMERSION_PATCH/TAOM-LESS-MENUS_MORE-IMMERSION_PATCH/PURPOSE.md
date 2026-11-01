@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/IAD_CompatPatch/Properties/`
+# Purpose — `Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`
 
 ## Purpose
-Owns project and assembly properties for IAD CompatPatch within Src/independent-mods/IAD_CompatPatch/.
+Owns the TAOM LESS MENUS MORE IMMERSION PATCH implementation/component scope beneath Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/IAD_CompatPatch/Properties/`.
+The implementation responsibility represented by `Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Properties/`
+# Purpose — `Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`
 
 ## Purpose
-Owns project and assembly properties for TAOM Standalone Compat Fourberie within Src/independent-mods/TAOM_Standalone_Compat_Fourberie/.
+Owns the independent TAOM Less Menus More Immersion compatibility patch in Src/compatibility-patches/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Properties/`.
+The implementation responsibility represented by `Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

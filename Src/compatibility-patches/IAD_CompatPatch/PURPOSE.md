@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Patches/`
+# Purpose — `Src/compatibility-patches/IAD_CompatPatch/`
 
 ## Purpose
-Owns the Patches implementation/component scope beneath Src/independent-mods/TAOM_Standalone_Compat_Fourberie/.
+Owns the IAD CompatPatch implementation/component scope beneath Src/compatibility-patches/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/Patches/`.
+The implementation responsibility represented by `Src/compatibility-patches/IAD_CompatPatch/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

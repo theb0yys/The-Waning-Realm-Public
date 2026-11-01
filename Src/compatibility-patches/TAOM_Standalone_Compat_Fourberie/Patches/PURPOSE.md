@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`
+# Purpose — `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/Patches/`
 
 ## Purpose
-Owns the TAOM LESS MENUS MORE IMMERSION PATCH implementation/component scope beneath Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/.
+Owns the Patches implementation/component scope beneath Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/`.
+The implementation responsibility represented by `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/Patches/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

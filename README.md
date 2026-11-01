@@ -1,6 +1,6 @@
 # The Waning Realm Public
 
-Public source for 14 independent Mount & Blade II: Bannerlord mods and compatibility patches. Each project retains its original location under `Src/independent-mods/`.
+Public source for 14 independent Mount & Blade II: Bannerlord mods and compatibility patches. The 11 other mod projects live under `Src/independent-mods/`; the three compatibility patch projects are grouped under [`Src/compatibility-patches/`](Src/compatibility-patches/). Each project keeps its own implementation and internal layout.
 
 This is a source collection. Compiled modules, game assets and external dependencies are not bundled. Choose the projects you need; the collection is not a single combined mod or an install-ready release.
 
@@ -11,16 +11,16 @@ This is a source collection. Compiled modules, game assets and external dependen
 | [Campaign Map Visibility](Src/independent-mods/CampaignMapVisibility/) | Keeps campaign map labels and markers visible when zoomed out, with an optional map-reveal setting. | `CampaignMapVisibility` |
 | [Custom Battle Reforged](Src/independent-mods/CustomBattleReforged/) | TAOM Custom Battle faction, troop-selection and army-size adjustments. | `CustomBattleReforged` |
 | [Custom Battle Return](Src/independent-mods/CustomBattleReturn/) | Custom Battle return-menu patch. | `CustomBattleReturn` |
-| [Injuries And Diseases Compat Patch](Src/independent-mods/IAD_CompatPatch/) | Compatibility patches for Injuries and Diseases. | `IAD_CompatPatch` |
+| [Injuries And Diseases Compat Patch](Src/compatibility-patches/IAD_CompatPatch/) | Compatibility patches for Injuries and Diseases. | `IAD_CompatPatch` |
 | [LOTRAOM Faction Food & Prisoner Buffs](Src/independent-mods/LOTRAOM_FactionBuff/) | Faction food and prisoner buffs for TAOM. | `LOTRAOM_FactionBuff` |
 | [No Fall Damage](Src/independent-mods/NoFallDamage/) | Disables standard singleplayer fall damage for players, NPCs, mounts and riders. | `NoFallDamage` |
 | [Player Jump Height](Src/independent-mods/PlayerJumpHeight/) | Configurable player-character jump height through Mod Options. | `PlayerJumpHeight` |
 | [Player Speed Control](Src/independent-mods/PlayerSpeedControl/) | Separate controls for player running speed and campaign land travel. | `PlayerSpeedControl` |
-| [TAOM Less Menus More Immersion Patch](Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/) | Less Menus More Immersion compatibility patch for game-menu activation. | `TAOM-LESS-MENUS_MORE-IMMERSION_PATCH` |
+| [TAOM Less Menus More Immersion Patch](Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/) | Less Menus More Immersion compatibility patch for game-menu activation. | `TAOM-LESS-MENUS_MORE-IMMERSION_PATCH` |
 | [TAOM Contextual Messages](Src/independent-mods/TAOM_ContextualMessages/) | Contextual campaign messages for TAOM. | `Vanilla_ContextualMessages` |
 | [TAOM Equipment Test Shop](Src/independent-mods/TAOM_EquipmentTestShop/) | Equipment test-shop utility source; module packaging is incomplete in this repository. | No published module manifest |
 | [TAOM Palantir Network](Src/independent-mods/TAOM_PalantirNetwork/) | Palantir network campaign feature for TAOM. | `TAOM_PalantirNetwork` |
-| [TAOM Fourberie Compat Patch](Src/independent-mods/TAOM_Standalone_Compat_Fourberie/) | Compatibility patches for Fourberie. | `TAOM_Standalone_Compat_Fourberie` |
+| [TAOM Fourberie Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/) | Compatibility patches for Fourberie. | `TAOM_Standalone_Compat_Fourberie` |
 | [Waning Troop Limit Expander](Src/independent-mods/TLE_updated/) | Custom Battle troop limits, active-agent caps and reinforcement-wave controls. | `WANINGTROOPLIMITEXPANDER` |
 
 ## Runtime dependencies
@@ -32,16 +32,16 @@ The entries below reproduce the published `SubModule.xml` declarations. Names ar
 | [Campaign Map Visibility](Src/independent-mods/CampaignMapVisibility/SubModule.xml) | `TAOM.Dependencies`, `Native` (`v1.4.8`), `SandBoxCore`, `Sandbox` | None declared |
 | [Custom Battle Reforged](Src/independent-mods/CustomBattleReforged/SubModule.xml) | `Native`, `SandBoxCore`, `CustomBattle`, `TAOM.Dependencies`, `TAOM` | None declared |
 | [Custom Battle Return](Src/independent-mods/CustomBattleReturn/module/CustomBattleReturn/SubModule.xml) | `Bannerlord.Harmony`, `Native`, `CustomBattle` | None declared |
-| [Injuries And Diseases Compat Patch](Src/independent-mods/IAD_CompatPatch/SubModule.xml) | `InjuriesAndDiseases`, `TAOM.Dependencies` | None declared |
+| [Injuries And Diseases Compat Patch](Src/compatibility-patches/IAD_CompatPatch/SubModule.xml) | `InjuriesAndDiseases`, `TAOM.Dependencies` | None declared |
 | [LOTRAOM Faction Food & Prisoner Buffs](Src/independent-mods/LOTRAOM_FactionBuff/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `TAOM`, `TAOM.Dependencies` | `StoryMode`, `CustomBattle` |
 | [No Fall Damage](Src/independent-mods/NoFallDamage/SubModule.xml) | `TAOM.Dependencies`, `Native` (`v1.4.8`), `SandBoxCore`, `Sandbox` | None declared |
 | [Player Jump Height](Src/independent-mods/PlayerJumpHeight/SubModule.xml) | `TAOM.Dependencies`, `Native` (`v1.4.8`), `SandBoxCore`, `Sandbox` | None declared |
 | [Player Speed Control](Src/independent-mods/PlayerSpeedControl/SubModule.xml) | `TAOM.Dependencies`, `Native` (`v1.4.8`), `SandBoxCore`, `Sandbox` | None declared |
-| [TAOM Less Menus More Immersion Patch](Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `StoryMode`, `TAOM.Dependencies` | None declared |
+| [TAOM Less Menus More Immersion Patch](Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `StoryMode`, `TAOM.Dependencies` | None declared |
 | [TAOM Contextual Messages](Src/independent-mods/TAOM_ContextualMessages/Content/SubModule.xml) | `Native` (`v1.4.15`), `SandBoxCore` (`v1.4.15`), `Sandbox` (`v1.4.15`), `TAOM` | `StoryMode` (`v1.4.15`), `CustomBattle` (`v1.4.15`) |
 | [TAOM Equipment Test Shop](Src/independent-mods/TAOM_EquipmentTestShop/TAOM_EquipmentTestShop.csproj) | Not recorded: no published `SubModule.xml` | Not recorded |
 | [TAOM Palantir Network](Src/independent-mods/TAOM_PalantirNetwork/TAOM_PalantirNetwork/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `Bannerlord.Harmony`, `Bannerlord.ButterLib`, `Bannerlord.UIExtenderEx`, `Bannerlord.MBOptionScreen` | `TAOM` |
-| [TAOM Fourberie Compat Patch](Src/independent-mods/TAOM_Standalone_Compat_Fourberie/SubModule.xml) | `Fourberie`, `TAOM.Dependencies` | None declared |
+| [TAOM Fourberie Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/SubModule.xml) | `Fourberie`, `TAOM.Dependencies` | None declared |
 | [Waning Troop Limit Expander](Src/independent-mods/TLE_updated/SubModule.xml) | `Native` (`v1.4.7`), `SandBoxCore` (`v1.4.7`), `Sandbox` (`v1.4.7`), `CustomBattle` (`v1.4.7`), `TAOM.Dependencies`, `TAOM` | None declared |
 
 ### Dependency and version notes
@@ -68,16 +68,16 @@ The 14 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`).
 | `CampaignMapVisibility` | [CampaignMapVisibility.csproj](Src/independent-mods/CampaignMapVisibility/CampaignMapVisibility.csproj) |
 | `CustomBattleReforged` | [CustomBattleReforged.csproj](Src/independent-mods/CustomBattleReforged/CustomBattleReforged.csproj) |
 | `CustomBattleReturn` | [CustomBattleReturn.csproj](Src/independent-mods/CustomBattleReturn/CustomBattleReturn.csproj) |
-| `IAD_CompatPatch` | [IAD_CompatPatch.csproj](Src/independent-mods/IAD_CompatPatch/IAD_CompatPatch.csproj) |
+| `IAD_CompatPatch` | [IAD_CompatPatch.csproj](Src/compatibility-patches/IAD_CompatPatch/IAD_CompatPatch.csproj) |
 | `LOTRAOM_FactionBuff` | [LOTRAOM_FactionBuff.csproj](Src/independent-mods/LOTRAOM_FactionBuff/LOTRAOM_FactionBuff.csproj) |
 | `NoFallDamage` | [NoFallDamage.csproj](Src/independent-mods/NoFallDamage/NoFallDamage.csproj) |
 | `PlayerJumpHeight` | [PlayerJumpHeight.csproj](Src/independent-mods/PlayerJumpHeight/PlayerJumpHeight.csproj) |
 | `PlayerSpeedControl` | [PlayerSpeedControl.csproj](Src/independent-mods/PlayerSpeedControl/PlayerSpeedControl.csproj) |
-| `TAOM-LESS-MENUS_MORE-IMMERSION_PATCH` | [TAOM-LESS-MENUS_MORE-IMMERSION_PATCH.csproj](Src/independent-mods/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH.csproj) |
+| `TAOM-LESS-MENUS_MORE-IMMERSION_PATCH` | [TAOM-LESS-MENUS_MORE-IMMERSION_PATCH.csproj](Src/compatibility-patches/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH/TAOM-LESS-MENUS_MORE-IMMERSION_PATCH.csproj) |
 | `TAOM_ContextualMessages` | [Vanilla_ContextualMessages.csproj](Src/independent-mods/TAOM_ContextualMessages/Vanilla_ContextualMessages.csproj) |
 | `TAOM_EquipmentTestShop` | [TAOM_EquipmentTestShop.csproj](Src/independent-mods/TAOM_EquipmentTestShop/TAOM_EquipmentTestShop.csproj) |
 | `TAOM_PalantirNetwork` | [TAOM_PalantirNetwork.csproj](Src/independent-mods/TAOM_PalantirNetwork/TAOM_PalantirNetwork/TAOM_PalantirNetwork.csproj) |
-| `TAOM_Standalone_Compat_Fourberie` | [TAOM_Standalone_Compat_Fourberie.csproj](Src/independent-mods/TAOM_Standalone_Compat_Fourberie/TAOM_Standalone_Compat_Fourberie.csproj) |
+| `TAOM_Standalone_Compat_Fourberie` | [TAOM_Standalone_Compat_Fourberie.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/TAOM_Standalone_Compat_Fourberie.csproj) |
 | `TLE_updated` | [TroopLimitExpander.csproj](Src/independent-mods/TLE_updated/TroopLimitExpander.csproj) |
 
 ## Repository layout
@@ -85,8 +85,10 @@ The 14 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`).
 ```text
 Src/
   independent-mods/
-    <project>/           # One implementation home per independent mod
-      ...                # Original source, text definitions and available docs/tests
+    <project>/           # 11 independent mod projects
+  compatibility-patches/
+    <patch>/             # 3 independent compatibility patches
+      ...                # Source, text definitions and available docs/tests
 LICENSE
 README.md
 ```

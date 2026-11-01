@@ -1,10 +1,10 @@
-# Purpose — `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/`
+# Purpose — `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/Properties/`
 
 ## Purpose
-Owns the TAOM Standalone Compat Fourberie implementation/component scope beneath Src/native-adapters/patch-mods/3rd party/.
+Owns project and assembly properties for TAOM Standalone Compat Fourberie within Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/.
 
 ## Owner
-The implementation responsibility represented by `Src/independent-mods/TAOM_Standalone_Compat_Fourberie/`.
+The implementation responsibility represented by `Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/Properties/`.
 
 ## What belongs here
 - Source, assets, configuration, tests, or support files required by this exact component scope.

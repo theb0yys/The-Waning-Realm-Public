@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>9</LangVersion>
+    <BannerlordDir Condition="'$(BannerlordDir)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</BannerlordDir>
+    <BannerlordBin>$(BannerlordDir)\bin\Win64_Shipping_Client</BannerlordBin>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TAOM_Standalone_Compat_MyLittleWarband.csproj" />
+    <Reference Include="0Harmony"><HintPath>$(BannerlordDir)\Modules\TAOM.Dependencies\bin\Win64_Shipping_Client\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core"><HintPath>$(BannerlordBin)\TaleWorlds.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.CampaignSystem"><HintPath>$(BannerlordBin)\TaleWorlds.CampaignSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Library"><HintPath>$(BannerlordBin)\TaleWorlds.Library.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.ObjectSystem"><HintPath>$(BannerlordBin)\TaleWorlds.ObjectSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.CampaignSystem.ViewModelCollection"><HintPath>$(BannerlordBin)\TaleWorlds.CampaignSystem.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection"><HintPath>$(BannerlordBin)\TaleWorlds.Core.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.GauntletUI.PrefabSystem"><HintPath>$(BannerlordBin)\TaleWorlds.GauntletUI.PrefabSystem.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

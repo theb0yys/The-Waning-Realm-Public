@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="AIInfluence-TAOM-2.0.29.5" />
+  <Id value="TAOM_Standalone_Compat_AIInfluence" />
+  <Version value="v0.1.1" />
+  <DefaultModule value="false" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <ModuleCategory value="Singleplayer" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="TAOM.Dependencies" />
+    <DependedModule Id="TAOM" />
+    <DependedModule Id="AIInfluence" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="AIInfluence-TAOM-2.0.29.5" />
+      <DLLName value="TAOM_Standalone_Compat_AIInfluence.dll" />
+      <SubModuleClassType value="TaomAIInfluenceCompat.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls />
+</Module>

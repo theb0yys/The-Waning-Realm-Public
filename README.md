@@ -1,6 +1,6 @@
 # The Waning Realm Public
 
-Public source for 14 independent Mount & Blade II: Bannerlord mods and compatibility patches. The 11 other mod projects live under `Src/independent-mods/`; the three compatibility patch projects are grouped under [`Src/compatibility-patches/`](Src/compatibility-patches/). Each project keeps its own implementation and internal layout.
+Public source for 26 Mount & Blade II: Bannerlord mod and compatibility projects. The 11 other mod projects live under `Src/independent-mods/`; 14 compatibility patches and Xorberax Pack Control are grouped under [`Src/compatibility-patches/`](Src/compatibility-patches/). Each project keeps its own implementation and internal layout. The patch folder also includes the shared source helper used by seven patches.
 
 This is a source collection. Compiled modules, game assets and external dependencies are not bundled. Choose the projects you need; the collection is not a single combined mod or an install-ready release.
 
@@ -22,6 +22,18 @@ This is a source collection. Compiled modules, game assets and external dependen
 | [TAOM Palantir Network](Src/independent-mods/TAOM_PalantirNetwork/) | Palantir network campaign feature for TAOM. | `TAOM_PalantirNetwork` |
 | [TAOM Fourberie Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/) | Compatibility patches for Fourberie. | `TAOM_Standalone_Compat_Fourberie` |
 | [Waning Troop Limit Expander](Src/independent-mods/TLE_updated/) | Custom Battle troop limits, active-agent caps and reinforcement-wave controls. | `WANINGTROOPLIMITEXPANDER` |
+| [AIInfluence-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_AIInfluence/) | Diplomacy compatibility bridge between TAOM and AI Influence. | `TAOM_Standalone_Compat_AIInfluence` |
+| [TAOM Agriculture Estate Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_AgricultureEstate/) | Compatibility finalizers for Agriculture Estate. | `TAOM_Standalone_Compat_AgricultureEstate` |
+| [TAOM BE Companion Expanded Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_BECompanionExpanded/) | Compatibility finalizers for Bannerlord Expanded Companion Expanded. | `TAOM_Standalone_Compat_BECompanionExpanded` |
+| [TAOM BE Settlement Interactions Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_BESettlementInteractions/) | Compatibility finalizers for Bannerlord Expanded Settlement Interactions. | `TAOM_Standalone_Compat_BESettlementInteractions` |
+| [TAOM Custom Battle Equipment Safety Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_CustomBattleEquipmentSafety/) | Initial weapon-equipment safety patch for Custom Battle. | `TAOM_Standalone_Compat_CustomBattleEquipmentSafety` |
+| [TAOM Distinguished Service Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_DistinguishedService/) | Compatibility finalizers for Distinguished Service. | `TAOM_Standalone_Compat_DistinguishedService` |
+| [TAOM Governors Handle Issues Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_GovernorsHandleIssues/) | Compatibility finalizers for Governors Handle Issues. | `TAOM_Standalone_Compat_GovernorsHandleIssues` |
+| [TAOM My Little Warband Compatibility](Src/compatibility-patches/TAOM_Standalone_Compat_MyLittleWarband/) | My Little Warband runtime API, culture and equipment compatibility. | `TAOM_Standalone_Compat_MyLittleWarband` |
+| [TAOM RBM Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_RBM/) | Compatibility finalizers for Realistic Battle Mod. | `TAOM_Standalone_Compat_RBM` |
+| [Retinues Clan Colours - TAOM 2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/) | Retinues customised-troop clan-colour compatibility. | `TAOM_Standalone_Compat_Retinues` |
+| [Xorberax-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_XorberaxCompatibility/) | TAOM creature-cleave compatibility with Xorberax Legacy. | `TAOM_XorberaxCompatibility` |
+| [Xorberax TFTAOM Experience](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/) | Supporting module host and configuration control for the Xorberax pack. | `Xorberax_TFTAOM_Experience` |
 
 ## Runtime dependencies
 
@@ -43,6 +55,18 @@ The entries below reproduce the published `SubModule.xml` declarations. Names ar
 | [TAOM Palantir Network](Src/independent-mods/TAOM_PalantirNetwork/TAOM_PalantirNetwork/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `Bannerlord.Harmony`, `Bannerlord.ButterLib`, `Bannerlord.UIExtenderEx`, `Bannerlord.MBOptionScreen` | `TAOM` |
 | [TAOM Fourberie Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/SubModule.xml) | `Fourberie`, `TAOM.Dependencies` | None declared |
 | [Waning Troop Limit Expander](Src/independent-mods/TLE_updated/SubModule.xml) | `Native` (`v1.4.7`), `SandBoxCore` (`v1.4.7`), `Sandbox` (`v1.4.7`), `CustomBattle` (`v1.4.7`), `TAOM.Dependencies`, `TAOM` | None declared |
+| [AIInfluence-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_AIInfluence/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `TAOM.Dependencies`, `TAOM`, `AIInfluence` | None declared |
+| [TAOM Agriculture Estate Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_AgricultureEstate/SubModule.xml) | `AgricultureEstate`, `TAOM.Dependencies` | None declared |
+| [TAOM BE Companion Expanded Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_BECompanionExpanded/SubModule.xml) | `BannerlordExpanded.CompanionExpanded`, `TAOM.Dependencies` | None declared |
+| [TAOM BE Settlement Interactions Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_BESettlementInteractions/SubModule.xml) | `BannerlordExpanded.SettlementInteractions`, `TAOM.Dependencies` | None declared |
+| [TAOM Custom Battle Equipment Safety Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_CustomBattleEquipmentSafety/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `CustomBattle`, `TAOM.Dependencies` | None declared |
+| [TAOM Distinguished Service Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_DistinguishedService/SubModule.xml) | `DistinguishedService110`, `TAOM.Dependencies` | None declared |
+| [TAOM Governors Handle Issues Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_GovernorsHandleIssues/SubModule.xml) | `GovernorsHandleIssues`, `TAOM.Dependencies` | None declared |
+| [TAOM My Little Warband Compatibility](Src/compatibility-patches/TAOM_Standalone_Compat_MyLittleWarband/SubModule.xml) | `Native`, `TAOM.Dependencies`, `TAOM` | None declared |
+| [TAOM RBM Compat Patch](Src/compatibility-patches/TAOM_Standalone_Compat_RBM/SubModule.xml) | `RBM`, `TAOM.Dependencies` | None declared |
+| [Retinues Clan Colours - TAOM 2.0.29.5](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `Bannerlord.Harmony`, `TAOM.Dependencies`, `TAOM`, `Retinues` | None declared |
+| [Xorberax-TAOM-2.0.29.5](Src/compatibility-patches/TAOM_XorberaxCompatibility/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `TAOM`, `XorberaxLegacy` | None declared |
+| [Xorberax TFTAOM Experience](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/SubModule.xml) | `Native`, `SandBoxCore`, `Sandbox`, `CustomBattle`, `StoryMode`, `TAOM.Dependencies`, `TAOM` | None declared |
 
 ### Dependency and version notes
 
@@ -53,9 +77,13 @@ The entries below reproduce the published `SubModule.xml` declarations. Names ar
 - The `SupportedVersions` fields additionally declare `v1.4.15` for Faction Food & Prisoner Buffs and Contextual Messages, `v1.4.7` for Troop Limit Expander, and `e1.3.15` for Palantir Network. These are existing manifest values, not a claim that all projects target the same game version.
 - Less Menus More Immersion is the patch's named compatibility target, but its published manifest does not declare a separate Less Menus module dependency. Equipment Test Shop has no published launcher manifest; its runtime requirements and install layout remain unrecorded.
 
+- Additional external module IDs used by the patches include `AIInfluence`, `AgricultureEstate`, `BannerlordExpanded.CompanionExpanded`, `BannerlordExpanded.SettlementInteractions`, `DistinguishedService110`, `GovernorsHandleIssues`, `RBM`, `Retinues`, `XorberaxLegacy`. They remain separately installed dependencies.
+- My Little Warband also requires the original `MyLittleWarband` installation and its supported DLL, XML and GUI files, even though it is not listed in the required-module list. Follow its [README](Src/compatibility-patches/TAOM_Standalone_Compat_MyLittleWarband/README.md): the compatibility module must load before My Little Warband.
+- Some bridges validate exact dependency hashes or module identities. A matching module name alone does not establish compatibility. Xorberax Pack Control also expects its managed-module and dependency DLL payloads; those binaries are not included in this source repository.
+
 ## Building from source
 
-The 14 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`). Use a Windows C# / MSBuild toolchain with the corresponding targeting pack; SDK-style projects also require a compatible .NET SDK. Test projects may have different framework requirements.
+The 26 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`). Use a Windows C# / MSBuild toolchain with the corresponding targeting pack; SDK-style projects also require a compatible .NET SDK. Test projects may have different framework requirements.
 
 1. Open the individual project below. There is no root solution for the entire collection.
 2. Inspect its `.csproj` and any included build script. Set the game and dependency paths for your machine; some references use local paths or MSBuild properties such as `GameRoot` and `GameBin`. Match the game assemblies to that project's declared version and APIs.
@@ -79,6 +107,20 @@ The 14 main mod projects target **.NET Framework 4.7.2** (`net472` or `v4.7.2`).
 | `TAOM_PalantirNetwork` | [TAOM_PalantirNetwork.csproj](Src/independent-mods/TAOM_PalantirNetwork/TAOM_PalantirNetwork/TAOM_PalantirNetwork.csproj) |
 | `TAOM_Standalone_Compat_Fourberie` | [TAOM_Standalone_Compat_Fourberie.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_Fourberie/TAOM_Standalone_Compat_Fourberie.csproj) |
 | `TLE_updated` | [TroopLimitExpander.csproj](Src/independent-mods/TLE_updated/TroopLimitExpander.csproj) |
+| `TAOM_Standalone_Compat_AIInfluence` | [TAOM_Standalone_Compat_AIInfluence.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_AIInfluence/TAOM_Standalone_Compat_AIInfluence.csproj) |
+| `TAOM_Standalone_Compat_AgricultureEstate` | [TAOM_Standalone_Compat_AgricultureEstate.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_AgricultureEstate/TAOM_Standalone_Compat_AgricultureEstate.csproj) |
+| `TAOM_Standalone_Compat_BECompanionExpanded` | [TAOM_Standalone_Compat_BECompanionExpanded.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_BECompanionExpanded/TAOM_Standalone_Compat_BECompanionExpanded.csproj) |
+| `TAOM_Standalone_Compat_BESettlementInteractions` | [TAOM_Standalone_Compat_BESettlementInteractions.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_BESettlementInteractions/TAOM_Standalone_Compat_BESettlementInteractions.csproj) |
+| `TAOM_Standalone_Compat_CustomBattleEquipmentSafety` | [TAOM_Standalone_Compat_CustomBattleEquipmentSafety.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_CustomBattleEquipmentSafety/TAOM_Standalone_Compat_CustomBattleEquipmentSafety.csproj) |
+| `TAOM_Standalone_Compat_DistinguishedService` | [TAOM_Standalone_Compat_DistinguishedService.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_DistinguishedService/TAOM_Standalone_Compat_DistinguishedService.csproj) |
+| `TAOM_Standalone_Compat_GovernorsHandleIssues` | [TAOM_Standalone_Compat_GovernorsHandleIssues.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_GovernorsHandleIssues/TAOM_Standalone_Compat_GovernorsHandleIssues.csproj) |
+| `TAOM_Standalone_Compat_MyLittleWarband` | [TAOM_Standalone_Compat_MyLittleWarband.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_MyLittleWarband/TAOM_Standalone_Compat_MyLittleWarband.csproj) |
+| `TAOM_Standalone_Compat_RBM` | [TAOM_Standalone_Compat_RBM.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_RBM/TAOM_Standalone_Compat_RBM.csproj) |
+| `TAOM_Standalone_Compat_Retinues` | [TAOM_Standalone_Compat_Retinues.csproj](Src/compatibility-patches/TAOM_Standalone_Compat_Retinues/TAOM_Standalone_Compat_Retinues.csproj) |
+| `TAOM_XorberaxCompatibility` | [TAOM_XorberaxCompatibility.csproj](Src/compatibility-patches/TAOM_XorberaxCompatibility/TAOM_XorberaxCompatibility.csproj) |
+| `Xorberax_TFTAOM_Pack_Control` | [Xorberax_TFTAOM_Pack_Control.csproj](Src/compatibility-patches/Xorberax_TFTAOM_Pack_Control/Xorberax_TFTAOM_Pack_Control.csproj) |
+
+Seven patch projects link `../_SharedCompat/FinalizerInfrastructure.cs`. Keep the [_SharedCompat](Src/compatibility-patches/_SharedCompat/) folder alongside those projects when building. AIInfluence, Retinues and Xorberax Compatibility reference Harmony from the installed `Bannerlord.Harmony` directory in their project files; Pack Control additionally references MCMv5. These build paths are separate from the manifest declarations.
 
 ## Repository layout
 
@@ -87,7 +129,7 @@ Src/
   independent-mods/
     <project>/           # 11 independent mod projects
   compatibility-patches/
-    <patch>/             # 3 independent compatibility patches
+    <patch>/             # 14 patches, Pack Control and _SharedCompat
       ...                # Source, text definitions and available docs/tests
 LICENSE
 README.md

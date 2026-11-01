@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="TAOM My Little Warband Compatibility" />
+  <Id value="TAOM_Standalone_Compat_MyLittleWarband" />
+  <Version value="v1.0.0" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="TAOM.Dependencies" />
+    <DependedModule Id="TAOM" />
+  </DependedModules>
+  <ModulesToLoadAfterThis>
+    <Module Id="MyLittleWarband" />
+  </ModulesToLoadAfterThis>
+  <SubModules>
+    <SubModule>
+      <Name value="TAOM My Little Warband Compatibility" />
+      <DLLName value="TAOM_Standalone_Compat_MyLittleWarband.dll" />
+      <SubModuleClassType value="TAOM_Standalone_Compat_MyLittleWarband.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>

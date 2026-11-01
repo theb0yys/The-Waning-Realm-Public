@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework><LangVersion>latest</LangVersion>
+    <AssemblyName>TAOM_Standalone_Compat_AIInfluence</AssemblyName><Version>0.1.1</Version>
+    <AssemblyVersion>0.1.1.0</AssemblyVersion><FileVersion>0.1.1.0</FileVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages><NuGetAudit>false</NuGetAudit>
+    <GameRoot Condition="'$(GameRoot)' == ''">A:\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord</GameRoot>
+  </PropertyGroup>
+  <ItemGroup><Compile Include="*.cs" />
+    <Reference Include="TaleWorlds.Library" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.Library.dll" Private="false" />
+    <Reference Include="TaleWorlds.Core" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.Core.dll" Private="false" />
+    <Reference Include="TaleWorlds.CampaignSystem" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.CampaignSystem.dll" Private="false" />
+    <Reference Include="TaleWorlds.MountAndBlade" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.MountAndBlade.dll" Private="false" />
+    <Reference Include="TaleWorlds.ObjectSystem" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.ObjectSystem.dll" Private="false" />
+    <Reference Include="TaleWorlds.Engine" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.Engine.dll" Private="false" />
+    <Reference Include="TaleWorlds.DotNet" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.DotNet.dll" Private="false" />
+    <Reference Include="TaleWorlds.Localization" HintPath="$(GameRoot)/bin/Win64_Shipping_Client/TaleWorlds.Localization.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameRoot)/Modules/Bannerlord.Harmony/bin/Win64_Shipping_Client/0Harmony.dll" Private="false" />
+  </ItemGroup>
+</Project>

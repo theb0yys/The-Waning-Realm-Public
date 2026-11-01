@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Xorberax-TAOM-2.0.29.5" />
+  <Id value="TAOM_XorberaxCompatibility" />
+  <Version value="v0.1.1" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+  <Official value="false" />
+  <DependedModules>
+    <DependedModule Id="Native" />
+    <DependedModule Id="SandBoxCore" />
+    <DependedModule Id="Sandbox" />
+    <DependedModule Id="TAOM" />
+    <DependedModule Id="XorberaxLegacy" />
+  </DependedModules>
+  <DependedModuleMetadatas>
+    <DependedModuleMetadata id="Native" order="LoadBeforeThis" version="v1.4.8.*" />
+    <DependedModuleMetadata id="TAOM" order="LoadBeforeThis" version="v2.0.29.5" />
+    <DependedModuleMetadata id="XorberaxLegacy" order="LoadBeforeThis" version="v1.0.8.8" />
+  </DependedModuleMetadatas>
+  <SubModules>
+    <SubModule>
+      <Name value="Xorberax-TAOM-2.0.29.5" />
+      <DLLName value="TAOM_XorberaxCompatibility.dll" />
+      <SubModuleClassType value="TAOM.XorberaxCompatibility.SubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>
